@@ -14,7 +14,8 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Grid>
-        <TextBlock Text="dfdfdfdf"/>
-    </Grid>
+    <DockPanel Background="Aqua">
+        <TextBlock HorizontalAlignment="Right" DockPanel.Dock="Left" Text="11111"/>
+        <TextBlock Background="AntiqueWhite" DockPanel.Dock="Right" Text="22222"/>
+    </DockPanel>
 </Window>

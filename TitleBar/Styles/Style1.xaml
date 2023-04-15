@@ -12,12 +12,9 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:MainWindow}">
                     <Grid ShowGridLines="True">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="80"></RowDefinition>
-                            <RowDefinition Height="50"></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Border Grid.Row="0" Background="Aqua"  
+                        <Border Background="Aqua"  
                             Margin="{Binding Source={x:Static shell:SystemParameters.SmallIconHeight}, Path=WindowNonClientFrameThickness}">
+                            <ContentPresenter Content="{TemplateBinding Content}" />
                         </Border>
                         <TextBlock Grid.Row="0" FontSize="18" Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"   
                                VerticalAlignment="Top" HorizontalAlignment="Left"   
@@ -27,7 +24,6 @@
                            Margin="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(shell:WindowChrome.WindowChrome).ResizeBorderThickness}"   
                            Width="{Binding Source={x:Static shell:SystemParameters.SmallIconWidth}, Path=SmallIconSize.Width}"  
                            shell:WindowChrome.IsHitTestVisibleInChrome="True"/>
-                        <ContentPresenter Grid.Row="1" Content="{TemplateBinding Content}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

@@ -18,13 +18,10 @@
                             <ContentPresenter DockPanel.Dock="Bottom" Content="{TemplateBinding Content}" />
                         </DockPanel>
                     </Border>-->
-                    <Border 
-                        Margin="10,10,10,10">
-                        <DockPanel>
-                            <TextBlock DockPanel.Dock="Top" Text="Hello!" FontSize="20"/>
-                            <ContentPresenter DockPanel.Dock="Bottom" Content="{TemplateBinding Content}" />
-                        </DockPanel>
-                    </Border>
+                    <DockPanel>
+                        <TextBlock DockPanel.Dock="Top" Text="Title Bar" FontSize="20"/>
+                        <ContentPresenter DockPanel.Dock="Bottom" Content="{TemplateBinding Content}" />
+                    </DockPanel>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

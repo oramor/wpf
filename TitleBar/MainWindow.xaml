@@ -10,12 +10,12 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Styles/Style1.xaml"/>
+                <ResourceDictionary Source="Styles/Style2.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
     <DockPanel Background="Aqua">
-        <TextBlock HorizontalAlignment="Right" DockPanel.Dock="Left" Text="11111"/>
-        <TextBlock Background="AntiqueWhite" DockPanel.Dock="Right" Text="22222"/>
+        <TextBlock  DockPanel.Dock="Left" Text="11111"/>
+        <TextBlock DockPanel.Dock="Right" Background="AntiqueWhite" Text="22222"/>
     </DockPanel>
 </Window>

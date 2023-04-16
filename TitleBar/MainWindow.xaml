@@ -15,7 +15,9 @@
         </ResourceDictionary>
     </Window.Resources>
     <DockPanel Background="Aqua">
+        <Border BorderThickness="8" BorderBrush="Red">
         <TextBlock  DockPanel.Dock="Left" Text="11111"/>
+        </Border>
         <TextBlock DockPanel.Dock="Right" Background="AntiqueWhite" Text="22222"/>
     </DockPanel>
 </Window>

@@ -19,7 +19,13 @@
                         </DockPanel>
                     </Border>-->
                     <DockPanel>
-                        <TextBlock DockPanel.Dock="Top" Text="Title Bar" FontSize="20"/>
+                        <Grid DockPanel.Dock="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition Width="200"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="Title Bar" FontSize="20" Background="Aqua" Padding="12,5,0,0"/>
+                        </Grid>
                         <ContentPresenter DockPanel.Dock="Bottom" Content="{TemplateBinding Content}" />
                     </DockPanel>
                 </ControlTemplate>

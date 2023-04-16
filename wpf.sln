@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TitleBar", "TitleBar\TitleBar.csproj", "{886D8D3A-ADAE-46CA-92B2-DC59BC91DCCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TitleBar_WindowStyleNone", "TitleBar_WindowStyleNone\TitleBar_WindowStyleNone.csproj", "{9CB43C87-F693-4F29-B22E-D864572E1F65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TitleBar_WindowStyleNone", "TitleBar_WindowStyleNone\TitleBar_WindowStyleNone.csproj", "{9CB43C87-F693-4F29-B22E-D864572E1F65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TitleBar_WindowChrome", "TitleBar_WindowChrome\TitleBar_WindowChrome.csproj", "{B0229BDF-7509-458A-85DE-54A7608A3541}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9CB43C87-F693-4F29-B22E-D864572E1F65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CB43C87-F693-4F29-B22E-D864572E1F65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CB43C87-F693-4F29-B22E-D864572E1F65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0229BDF-7509-458A-85DE-54A7608A3541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0229BDF-7509-458A-85DE-54A7608A3541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0229BDF-7509-458A-85DE-54A7608A3541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0229BDF-7509-458A-85DE-54A7608A3541}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

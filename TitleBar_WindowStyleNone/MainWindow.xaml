@@ -16,13 +16,13 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition Width="200"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Title Bar" Grid.Column="0"/>
-            <UniformGrid Grid.Column="1" Rows="1">
+            <TextBlock Text="Title Bar" Grid.Column="0" Margin="10,5,0,0"/>
+            <UniformGrid Grid.Column="1" Rows="1" Margin="0,5,7,0">
                 <Button Name="btnMinimize" Click="btnMinimize_Click" Content="_"/>
                 <Button Name="btnMaximize" Click="btnMaximize_Click" Content="[]"/>
                 <Button Name="btnClose" Click="btnClose_Click" Content="X"/>
             </UniformGrid>
         </Grid>
-        <TextBlock Text="1111" DockPanel.Dock="Bottom"/>
+        <TextBlock Text="1111" DockPanel.Dock="Bottom" Margin="10,0,0,0"/>
     </DockPanel>
 </Window>

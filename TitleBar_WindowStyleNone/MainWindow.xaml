@@ -15,15 +15,25 @@
         <Grid DockPanel.Dock="Top" Background="Aqua">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition Width="150"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Text="Title Bar" Grid.Column="0" Margin="0,0,0,0" MouseLeftButtonDown="Window_MouseLeftButtonDown"/>
             <UniformGrid Grid.Column="1" Rows="1" Margin="0,5,7,0">
-                <Button Name="btnMinimize" Click="btnMinimize_Click" Content="_"/>
-                <Button Name="btnMaximize" Click="btnMaximize_Click" Content="[]"/>
-                <Button Name="btnClose" Click="btnClose_Click" Content="X"/>
+                <Button Name="btnMinimize" Click="btnMinimize_Click">
+                    <Canvas Height="25" Width="25">
+                        <Path Stroke="Black" StrokeThickness="2" Data="M0,15 L25,15"/>
+                    </Canvas>
+                </Button>
+                <Button Name="btnMaximize" Click="btnMaximize_Click">
+                    <Rectangle Height="25" Width="25" Stroke="Black" StrokeThickness="2"/>
+                </Button>
+                <Button Name="btnClose" Click="btnClose_Click">
+                    <Canvas Name="btnCloseCanvas" Height="25"  Width="25">
+                        <Path Stroke="Red" StrokeThickness="2" Data="M0,0 L25,25 M0,25 L25,0"/>
+                    </Canvas>
+                </Button>
             </UniformGrid>
         </Grid>
-        <TextBlock Text="1111" DockPanel.Dock="Bottom" Margin="0,0,0,0"/>
+        <TextBlock Name="testTextBlock" Text="1111" DockPanel.Dock="Bottom" Margin="0,0,0,0"/>
     </DockPanel>
 </Window>

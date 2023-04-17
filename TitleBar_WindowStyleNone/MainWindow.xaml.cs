@@ -10,6 +10,7 @@ namespace TitleBar_WindowStyleNone
         public MainWindow()
         {
             InitializeComponent();
+            testTextBlock.Text = btnCloseCanvas.Height.ToString();
         }
 
         private void btnMaximize_Click(object sender, RoutedEventArgs e)

@@ -11,6 +11,13 @@
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="0" ResizeBorderThickness="5" />
     </WindowChrome.WindowChrome>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/ButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <DockPanel>
         <Grid DockPanel.Dock="Top" Background="Aqua">
             <Grid.ColumnDefinitions>
@@ -19,17 +26,19 @@
             </Grid.ColumnDefinitions>
             <TextBlock Text="Title Bar" Grid.Column="0" Margin="0,0,0,0" MouseLeftButtonDown="Window_MouseLeftButtonDown"/>
             <UniformGrid Grid.Column="1" Rows="1" Margin="0,5,7,0">
-                <Button Name="btnMinimize" Click="btnMinimize_Click">
-                    <Canvas Height="25" Width="25">
-                        <Path Stroke="Black" StrokeThickness="2" Data="M0,15 L25,15"/>
-                    </Canvas>
+                <Button Style="{StaticResource minimizeButtonStyle}" Name="btnMinimize" Click="btnMinimize_Click">
                 </Button>
                 <Button Name="btnMaximize" Click="btnMaximize_Click">
-                    <Rectangle Height="25" Width="25" Stroke="Black" StrokeThickness="2"/>
+                    <!--<Rectangle Height="12" Width="12" Stroke="Black" StrokeThickness="1"/>-->
+                    <Canvas>
+                        <!--<Rectangle Height="14" Width="14" Stroke="Black" StrokeThickness="1"/>-->
+                        <Path Stroke="Black" StrokeThickness="1" Data="M0,0 L14,0 L14,14 L0,14 L0,0"/>
+                        <Path Stroke="Black" StrokeThickness="1" Data="M2,0 L2,-2 L16,-2 L16,12 L14,12"/>
+                    </Canvas>
                 </Button>
                 <Button Name="btnClose" Click="btnClose_Click">
                     <Canvas Name="btnCloseCanvas" Height="25"  Width="25">
-                        <Path Stroke="Red" StrokeThickness="2" Data="M0,0 L25,25 M0,25 L25,0"/>
+                        <Path Stroke="Red" StrokeThickness="1" Data="M0,0 L15,15 M0,15 L15,0"/>
                     </Canvas>
                 </Button>
             </UniformGrid>

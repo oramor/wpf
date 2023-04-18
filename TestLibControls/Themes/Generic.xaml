@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/TestLibControls;component/Templates/XamlIconButton.xaml"/>
+        <ResourceDictionary Source="/TestLibControls;component/Themes/DefaultTheme.xaml"/>
+        <!--<ResourceDictionary Source="/TestLibControls;component/Templates/XamlIconButton.xaml"/>-->
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

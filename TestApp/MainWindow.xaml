@@ -8,10 +8,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
-        <c:XamlIconButton Height="30">rrrrrrr</c:XamlIconButton>
-        <c:XamlIconButton Height="30"/>
-        <c:XamlIconButton/>
-        <c:TestButton>dfdfdf</c:TestButton>
-        <c:TestButton>dfdfdf</c:TestButton>
+        <c:XamlIconButton Height="40" Width="150"/>
     </StackPanel>
 </Window>

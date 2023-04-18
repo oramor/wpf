@@ -5,7 +5,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:XamlIconButton}">
-                    <Border Background="Red" BorderBrush="Aqua" BorderThickness="2"/>
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="2"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

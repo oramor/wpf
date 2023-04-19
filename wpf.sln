@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestLibControls", "TestLibC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp", "TestApp\TestApp.csproj", "{5AB65505-A430-44BD-890F-23813E3E579F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp_VSM", "TestApp_VSM\TestApp_VSM.csproj", "{2E54FAA1-76BA-475B-B41B-8E1B8B61C07C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{5AB65505-A430-44BD-890F-23813E3E579F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AB65505-A430-44BD-890F-23813E3E579F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AB65505-A430-44BD-890F-23813E3E579F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E54FAA1-76BA-475B-B41B-8E1B8B61C07C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E54FAA1-76BA-475B-B41B-8E1B8B61C07C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E54FAA1-76BA-475B-B41B-8E1B8B61C07C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E54FAA1-76BA-475B-B41B-8E1B8B61C07C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

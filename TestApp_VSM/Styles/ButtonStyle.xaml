@@ -14,19 +14,18 @@
                         </Border.Background>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="0:0:0.5" />
-                                    <VisualTransition GeneratedDuration="0"
-                                  To="Pressed" />
-                                </VisualStateGroup.Transitions>
                                 <VisualState x:Name="MouseOver">
                                     <Storyboard>
-                                        <ColorAnimation Storyboard.TargetProperty="(Border.Background).Color" To="Blue" Duration="0:0:15"/>
+                                        <ColorAnimation Storyboard.TargetProperty="(Border.Background).Color" To="Blue" Duration="0:0:0.1"/>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Pressed"/>
                                 <VisualState x:Name="Normal" />
-                                <VisualState x:Name="Disabled"/>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="(Border.Background).Color" To="Gray" Duration="0:0:0"/>
+                                    </Storyboard>
+                                </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <ContentPresenter Margin="2"

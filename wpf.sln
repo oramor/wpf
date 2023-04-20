@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp_VSM", "TestApp_VSM\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App_Bindings", "App_Bindings\App_Bindings.csproj", "{110D85D7-F11A-4184-895E-8E328903AD5E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App_RoutedEvents", "App_RoutedEvents\App_RoutedEvents.csproj", "{D86BF9C1-4BB1-4A0A-A34E-8ABFDD97B499}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{110D85D7-F11A-4184-895E-8E328903AD5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{110D85D7-F11A-4184-895E-8E328903AD5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{110D85D7-F11A-4184-895E-8E328903AD5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D86BF9C1-4BB1-4A0A-A34E-8ABFDD97B499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D86BF9C1-4BB1-4A0A-A34E-8ABFDD97B499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D86BF9C1-4BB1-4A0A-A34E-8ABFDD97B499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D86BF9C1-4BB1-4A0A-A34E-8ABFDD97B499}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

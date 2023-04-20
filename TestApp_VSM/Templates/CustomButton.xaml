@@ -1,0 +1,40 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:TestApp_VSM">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary>
+            <SolidColorBrush x:Key="MouseOverBrush" Color="Brown"/>
+            <Color x:Key="MouseOverColor">Brown</Color>
+            <local:SolidColorBrushToColorConverter x:Key="solidColorBrushToColorConverter"/>
+        </ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+    <Style TargetType="{x:Type local:CustomButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:CustomButton}">
+                    <Border x:Name="buttonBorderColor" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ColorAnimation  Storyboard.TargetProperty="Background.Color" To="{Binding BackgroundMouseOver.Color, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" Duration="0:0:0.1">
+                                        </ColorAnimation>
+                                    </Storyboard>
+                                    <!-- Вот этот закомментированный код исправно работает, когда явно передается Color, однако стоит попробовать забиндиться, анимация перестает работать
+                                    <Storyboard>
+                                        <ColorAnimation  Storyboard.TargetProperty="Background.Color" To="{StaticResource MouseOverColor}" Duration="0:0:0.1">
+                                        </ColorAnimation>
+                                    </Storyboard>-->
+                                </VisualState>
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="Pressed"/>
+                                <VisualState x:Name="Disabled"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <ContentPresenter/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

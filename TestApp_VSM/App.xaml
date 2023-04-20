@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:TestApp_VSM"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary Source="Styles/ButtonStyle.xaml"/>
+        <ResourceDictionary Source="Styles/ButtonStyle.xaml">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Templates/CustomButton.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

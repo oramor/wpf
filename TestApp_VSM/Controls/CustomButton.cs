@@ -6,7 +6,8 @@ namespace TestApp_VSM
 {
     class CustomButton : Button
     {
-        readonly static Color _defaultColor = Color.FromArgb(255, 0, 255, 0);
+        readonly static Color _defaultBackgroundMouseOverColor = Color.FromRgb(255, 0, 255);
+        readonly static Color _defaultBackgroundNormalColor = Color.FromRgb(255, 255, 255);
 
         static CustomButton()
         {
@@ -18,6 +19,25 @@ namespace TestApp_VSM
         //    var color = Color.FromArgb(255, 255, 255, 0);
         //    BackgroundMouseOver = new SolidColorBrush(color);
         //}
+
+        #region BackgroundNormal
+
+        public SolidColorBrush BackgroundNormal
+        {
+            get => (SolidColorBrush)GetValue(BackgroundNormalProperty);
+            set => SetValue(BackgroundNormalProperty, value);
+        }
+
+        public static readonly DependencyProperty BackgroundNormalProperty = DependencyProperty.Register(
+            nameof(BackgroundNormal),
+            typeof(SolidColorBrush),
+            typeof(CustomButton),
+            new FrameworkPropertyMetadata(new SolidColorBrush(_defaultBackgroundNormalColor) {
+                //BindsTwoWayByDefault = true,
+            })
+          );
+
+        #endregion
 
         #region BackgroundMouseOver
 
@@ -31,7 +51,7 @@ namespace TestApp_VSM
             nameof(BackgroundMouseOver),
             typeof(SolidColorBrush),
             typeof(CustomButton),
-            new PropertyMetadata(new SolidColorBrush(_defaultColor))
+            new PropertyMetadata(new SolidColorBrush(_defaultBackgroundMouseOverColor))
           );
 
         #endregion

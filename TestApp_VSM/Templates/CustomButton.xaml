@@ -12,16 +12,16 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:CustomButton}">
-                    <Border x:Name="buttonBorderColor" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                    <Border x:Name="buttonBorderColor" Background="{TemplateBinding BackgroundNormal}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup Name="CommonStates">
                                 <VisualState x:Name="MouseOver">
                                     <Storyboard>
-                                        <ColorAnimation  Storyboard.TargetProperty="Background.Color" To="{Binding BackgroundMouseOver.Color, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" Duration="0:0:0.1">
+                                        <ColorAnimation Storyboard.TargetProperty="Background.Color" To="{Binding BackgroundMouseOver.Color, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" Duration="0:0:0.1">
                                         </ColorAnimation>
                                     </Storyboard>
-                                    <!-- Вот этот закомментированный код исправно работает, когда явно передается Color, однако стоит попробовать забиндиться, анимация перестает работать
-                                    <Storyboard>
+                                     <!--Вот этот закомментированный код исправно работает, когда явно передается Color, однако стоит попробовать забиндиться, анимация перестает работать-->
+                                    <!--<Storyboard>
                                         <ColorAnimation  Storyboard.TargetProperty="Background.Color" To="{StaticResource MouseOverColor}" Duration="0:0:0.1">
                                         </ColorAnimation>
                                     </Storyboard>-->

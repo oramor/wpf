@@ -1,0 +1,15 @@
+﻿<Window x:Class="WpfExceptionHandling.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfExceptionHandling"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        d:DataContext="{x:Type local:MainVM}">
+    <Grid>
+        <Button x:Name="button" Content="Exception" HorizontalAlignment="Left" Margin="310,301,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button x:Name="asyncButton" Content="Async Exception" HorizontalAlignment="Left" Margin="400,301,0,0" VerticalAlignment="Top" Click="AsyncButton_Click"/>
+        <Button x:Name="commandButton" Content="Command Button" HorizontalAlignment="Left" Margin="520,301,0,0" VerticalAlignment="Top" Command="{Binding ClickCommand}"/>
+    </Grid>
+</Window>

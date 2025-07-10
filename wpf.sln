@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App_DefaultTheme", "App_Def
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppWithConfiguration", "AppWithConfiguration\AppWithConfiguration.csproj", "{7AD01BD1-9081-40CE-9C09-D3A1F7542997}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExceptionHandling", "WpfExceptionHandling\WpfExceptionHandling.csproj", "{FFC8409B-465B-4B50-856E-2F4C16CCF62C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{7AD01BD1-9081-40CE-9C09-D3A1F7542997}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AD01BD1-9081-40CE-9C09-D3A1F7542997}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AD01BD1-9081-40CE-9C09-D3A1F7542997}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFC8409B-465B-4B50-856E-2F4C16CCF62C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFC8409B-465B-4B50-856E-2F4C16CCF62C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFC8409B-465B-4B50-856E-2F4C16CCF62C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFC8409B-465B-4B50-856E-2F4C16CCF62C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

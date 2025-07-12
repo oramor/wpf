@@ -23,5 +23,15 @@ namespace WpfExceptionHandling
                 () => { throw new Exception("This Exception occured in the MainWindow event async handler"); }
             );
         }
+
+        private void ButtonBeginInvoke_Click(object sender, RoutedEventArgs e)
+        {
+            Dispatcher.BeginInvoke(() => { throw new Exception("This Exception occured in the MainWindow begin invoke handler"); });
+        }
+
+        private void TaskRunButton_Click(object sender, RoutedEventArgs e)
+        {
+            Task.Run(() => { throw new Exception("This Exception occured in the MainWindow Task.Run() handler"); });
+        }
     }
 }

@@ -11,5 +11,7 @@
         <Button x:Name="button" Content="Exception" HorizontalAlignment="Left" Margin="310,301,0,0" VerticalAlignment="Top" Click="Button_Click"/>
         <Button x:Name="asyncButton" Content="Async Exception" HorizontalAlignment="Left" Margin="400,301,0,0" VerticalAlignment="Top" Click="AsyncButton_Click"/>
         <Button x:Name="commandButton" Content="Command Button" HorizontalAlignment="Left" Margin="520,301,0,0" VerticalAlignment="Top" Command="{Binding ClickCommand}"/>
+        <Button x:Name="buttonBeginInvoke" Content="Begin Invoke" HorizontalAlignment="Left" Margin="639,301,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.136,0.597" Click="ButtonBeginInvoke_Click"/>
+        <Button x:Name="taskRunButton" Content="Task.Run()" HorizontalAlignment="Left" Margin="310,342,0,0" VerticalAlignment="Top" Click="TaskRunButton_Click"/>
     </Grid>
 </Window>

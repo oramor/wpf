@@ -11,17 +11,15 @@ namespace WpfExceptionHandling
             //MessageBox.Show("Приложение будет запущено после закрытия этого окна", "Application_DispatcherUnhandledException", MessageBoxButton.OK, MessageBoxImage.Information);
 
             AppDomain.CurrentDomain.UnhandledException += AppDomain_UnhandledException;
-            TaskScheduler.UnobservedTaskException += TaskSheduler_UnobservedTaskException;
 
             var vm = new MainVM();
 
             //throw new Exception("This Exception occured in the compostion root.");
 
             var window = new MainWindow() { DataContext = vm };
+
             var app = new App();
-
-            App.Current.DispatcherUnhandledException += Application_DispatcherUnhandledException;
-
+            app.DispatcherUnhandledException += Application_DispatcherUnhandledException;
             app.Run(window);
         }
 
@@ -32,9 +30,11 @@ namespace WpfExceptionHandling
 
         static void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
-            // Здесь только логируем ошибку
+            /// Пока что просто логируем, что исключение произошло в контексте UI-фреймворка.
+            /// e.Handled остается в значении false. Далее исключение будет обрабатываться
+            /// подпиской на уровне домена приложения.
 
-            MessageBox.Show(e.Exception.Message, "Application_DispatcherUnhandledException", MessageBoxButton.OK, MessageBoxImage.Error);
+            //MessageBox.Show(e.Exception.Message, "Application_DispatcherUnhandledException", MessageBoxButton.OK, MessageBoxImage.Error);
 
             // В этом случае исключение не попадет в AppDomain_UnhandledException
             //e.Handled = true;
@@ -42,18 +42,18 @@ namespace WpfExceptionHandling
 
         static void AppDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            if (e.ExceptionObject is not Exception exception)
+            if (e.ExceptionObject is not Exception ex)
                 return;
 
-            MessageBox.Show(exception.Message, "AppDomain_UnhandledException", MessageBoxButton.OK, MessageBoxImage.Error);
+            var dialog = new ExceptionDialog();
 
-            // Вызов условный, т.к. исключение может возникнуть до того, как было создано приложение.
-            Application.Current?.Shutdown();
-        }
+            if (dialog.ShowDialog() == true)
+            {
+                // Вызов условный, т.к. исключение может возникнуть до того, как было создано приложение.
+                Application.Current?.Shutdown();
+            }
 
-        static void TaskSheduler_UnobservedTaskException(object? sender, UnobservedTaskExceptionEventArgs e)
-        {
-            MessageBox.Show(e.Exception.Message, "TaskSheduler_UnobservedTaskException", MessageBoxButton.OK, MessageBoxImage.Error);
+            // MessageBox.Show(exception.Message, "AppDomain_UnhandledException", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         static void Dispatcher_UnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)

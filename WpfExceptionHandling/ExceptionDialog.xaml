@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfExceptionHandling"
         mc:Ignorable="d"
-        Title="ExceptionDialog" Height="80" Width="200">
+        Title="ExceptionDialog" Width="250" Height="180">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30px"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Error"/>
+        <Button Grid.Row="1" x:Name="okButton" Content="Ok" HorizontalAlignment="Center" VerticalAlignment="Top" Click="OkButton_Click"/>
     </Grid>
 </Window>

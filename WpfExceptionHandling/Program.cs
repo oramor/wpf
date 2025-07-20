@@ -45,7 +45,7 @@ namespace WpfExceptionHandling
             if (e.ExceptionObject is not Exception ex)
                 return;
 
-            if (ExceptionDialog.ShowDialog(ex) == true)
+            if (UnhandledExceptionDialog.ShowDialog(ex) == true)
             {
                 // Вызов условный, т.к. исключение может возникнуть до того, как было создано приложение.
                 Application.Current?.Shutdown();

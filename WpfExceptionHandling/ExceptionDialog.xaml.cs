@@ -9,9 +9,15 @@ namespace WpfExceptionHandling
     {
         public ExceptionDialog() => InitializeComponent();
 
-        public static void ShowDialog(Exception ex)
+        public static bool? ShowDialog(Exception ex)
         {
-            var vm = new ExceptionViewModel { Exception = ex };
+            string info = $"\nMessage ---\n{ex.Message}";
+            info += $"\nHelpLink ---\n{ex.HelpLink}";
+            info += $"\nSource ---\n{ex.Source}";
+            info += $"\nStackTrace ---\n{ex.StackTrace}";
+            info += $"\nTargetSite ---\n{ex.TargetSite}";
+
+            var vm = new UnhandledExceptionViewModel { Info = info };
 
             var dialog = new ExceptionDialog
             {
@@ -19,7 +25,7 @@ namespace WpfExceptionHandling
                 DataContext = vm,
             };
 
-            dialog.Show();
+            return dialog.ShowDialog();
         }
 
         void OkButton_Click(object sender, System.Windows.RoutedEventArgs e)

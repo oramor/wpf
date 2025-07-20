@@ -5,13 +5,64 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfExceptionHandling"
         mc:Ignorable="d"
-        Title="Unhandled Exception" Width="350" Height="200">
+        ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
+        Title="Unhandled Exception" Width="800" SizeToContent="Height">
+    <Window.Resources>
+        <Style x:Key="buttonStyle" TargetType="Button">
+            <Setter Property="Padding" Value="8,0"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style x:Key="detailsButtonStyle" TargetType="Button" BasedOn="{StaticResource buttonStyle}">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsDetailsCollapsed}" Value="True">
+                    <Setter Property="Content" Value="Details /\"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsDetailsCollapsed}" Value="False">
+                    <Setter Property="Content" Value="Details \/"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="detailsTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Visibility" Value="Collapsed"/>
+            <Setter Property="Margin" Value="8"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="Height" Value="200"/>
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsDetailsCollapsed}" Value="True">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsDetailsCollapsed}" Value="False">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="100px"/>
+            <RowDefinition Height="35px"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="30px"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="{Binding Info}"/>
-        <Button Grid.Row="1" x:Name="okButton" Content="Ok" HorizontalAlignment="Center" VerticalAlignment="Top" Click="OkButton_Click"/>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100px"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text=":(" FontSize="60" TextAlignment="Center" Foreground="Red"/>
+            <TextBlock Grid.Column="1" TextWrapping="Wrap" Padding="5,10" Text="Произошла непредвиденная ошибка, из-за которой программа не может продолжить работу. После того, как это окно будет закрыто, приложение завершит выполнение. К сожалению, все несохраненные данные будут утеряны."/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="250"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <Button x:Name="detailsButton" Command="{Binding DetailsButtonClickCommand}" Style="{StaticResource detailsButtonStyle}"/>
+                <Button x:Name="quitButton" Content="Quit"  Click="QuitButton_Click" Style="{StaticResource buttonStyle}"/>
+            </StackPanel>
+        </Grid>
+        <TextBox Grid.Row="2" Text="{Binding Info}" Style="{StaticResource detailsTextBoxStyle}"/>
     </Grid>
 </Window>

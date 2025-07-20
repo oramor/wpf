@@ -29,7 +29,7 @@ namespace WpfExceptionHandling
             return dialog.ShowDialog();
         }
 
-        void OkButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        void QuitButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             DialogResult = true;
         }

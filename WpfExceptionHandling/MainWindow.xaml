@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfExceptionHandling"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="WpfExceptionHandling Project" Height="450" Width="500"
         d:DataContext="{x:Type local:MainVM}">
     <Grid>
-        <Button x:Name="button" Content="Exception" HorizontalAlignment="Left" Margin="310,301,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button x:Name="asyncButton" Content="Async Exception" HorizontalAlignment="Left" Margin="400,301,0,0" VerticalAlignment="Top" Click="AsyncButton_Click"/>
-        <Button x:Name="commandButton" Content="Command Button" HorizontalAlignment="Left" Margin="520,301,0,0" VerticalAlignment="Top" Command="{Binding ClickCommand}"/>
-        <Button x:Name="buttonBeginInvoke" Content="Begin Invoke" HorizontalAlignment="Left" Margin="639,301,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.136,0.597" Click="ButtonBeginInvoke_Click"/>
-        <Button x:Name="taskRunButton" Content="Task.Run()" HorizontalAlignment="Left" Margin="310,342,0,0" VerticalAlignment="Top" Click="TaskRunButton_Click"/>
+        <Button x:Name="button" Content="Exception" HorizontalAlignment="Left" Margin="63,50,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button x:Name="asyncButton" Content="Async Exception" HorizontalAlignment="Left" Margin="63,90,0,0" VerticalAlignment="Top" Click="AsyncButton_Click"/>
+        <Button x:Name="commandButton" Content="Command Button" HorizontalAlignment="Left" Margin="63,129,0,0" VerticalAlignment="Top" Command="{Binding ClickCommand}"/>
+        <Button x:Name="buttonBeginInvoke" Content="Begin Invoke" HorizontalAlignment="Left" Margin="63,166,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.136,0.597" Click="ButtonBeginInvoke_Click"/>
+        <Button x:Name="taskRunButton" Content="Task.Run()" HorizontalAlignment="Left" Margin="63,202,0,0" VerticalAlignment="Top" Click="TaskRunButton_Click"/>
     </Grid>
 </Window>

@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:WpfExceptionHandling"
         mc:Ignorable="d"
         ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
-        Title="Unhandled Exception" Width="800" SizeToContent="Height">
+        Title="Unhandled Exception" SizeToContent="WidthAndHeight"
+        Name="exceptionWindow">
     <Window.Resources>
         <Style x:Key="buttonStyle" TargetType="Button">
             <Setter Property="Padding" Value="8,0"/>
@@ -15,10 +16,10 @@
         <Style x:Key="detailsButtonStyle" TargetType="Button" BasedOn="{StaticResource buttonStyle}">
             <Style.Triggers>
                 <DataTrigger Binding="{Binding IsDetailsCollapsed}" Value="True">
-                    <Setter Property="Content" Value="Details /\"/>
+                    <Setter Property="Content" Value="Show details"/>
                 </DataTrigger>
                 <DataTrigger Binding="{Binding IsDetailsCollapsed}" Value="False">
-                    <Setter Property="Content" Value="Details \/"/>
+                    <Setter Property="Content" Value="Close details"/>
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -26,7 +27,7 @@
             <Setter Property="Visibility" Value="Collapsed"/>
             <Setter Property="Margin" Value="8"/>
             <Setter Property="IsReadOnly" Value="True"/>
-            <Setter Property="Height" Value="200"/>
+            <Setter Property="Height" Value="250"/>
             <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
             <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
             <Style.Triggers>
@@ -38,28 +39,42 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
+        <Style x:Key="mainGridStyle" TargetType="Grid">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsDetailsCollapsed}" Value="True">
+                    <Setter Property="Width" Value="500"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsDetailsCollapsed}" Value="False">
+                    <Setter Property="Width" Value="800"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
-    <Grid>
+    <Grid Style="{StaticResource mainGridStyle}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="100px"/>
-            <RowDefinition Height="35px"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100px"/>
+                <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text=":(" FontSize="60" TextAlignment="Center" Foreground="Red"/>
-            <TextBlock Grid.Column="1" TextWrapping="Wrap" Padding="5,10" Text="Произошла непредвиденная ошибка, из-за которой программа не может продолжить работу. После того, как это окно будет закрыто, приложение завершит выполнение. К сожалению, все несохраненные данные будут утеряны."/>
+            <TextBlock Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Left" Padding="5,10" Text="Произошла непредвиденная ошибка, из-за которой программа не может продолжить работу. После того, как это окно будет закрыто, приложение завершит выполнение. К сожалению, все несохраненные данные будут утеряны."/>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="250"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="1" Orientation="Horizontal">
+            <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="0,0,0,5">
                 <Button x:Name="detailsButton" Command="{Binding DetailsButtonClickCommand}" Style="{StaticResource detailsButtonStyle}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,5,5">
+                <Button x:Name="continueButton" Content="Continue" Style="{StaticResource buttonStyle}" IsEnabled="False"/>
                 <Button x:Name="quitButton" Content="Quit"  Click="QuitButton_Click" Style="{StaticResource buttonStyle}"/>
             </StackPanel>
         </Grid>

@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:draw="clr-namespace:System.Drawing;assembly=System.Drawing"
         xmlns:local="clr-namespace:WpfExceptionHandling"
         mc:Ignorable="d"
         ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
@@ -49,6 +50,7 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
+        <local:IconToImageSourceConverter x:Key="iconToImageSourceConverter"/>
     </Window.Resources>
     <Grid Style="{StaticResource mainGridStyle}">
         <Grid.RowDefinitions>
@@ -61,7 +63,10 @@
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text=":(" FontSize="60" TextAlignment="Center" Foreground="Red"/>
+            <Image Grid.Column="0" Width="64" Source="{Binding Source={x:Static draw:SystemIcons.Error},
+        Converter={StaticResource iconToImageSourceConverter},
+        Mode=OneWay}" />
+
             <TextBlock Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Left" Padding="5,10" Text="Произошла непредвиденная ошибка, из-за которой программа не может продолжить работу. После того, как это окно будет закрыто, приложение завершит выполнение. К сожалению, все несохраненные данные будут утеряны."/>
         </Grid>
         <Grid Grid.Row="1">

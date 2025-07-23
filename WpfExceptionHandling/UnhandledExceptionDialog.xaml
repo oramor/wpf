@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:draw="clr-namespace:System.Drawing;assembly=System.Drawing"
         xmlns:local="clr-namespace:WpfExceptionHandling"
         mc:Ignorable="d"
         ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
@@ -50,7 +49,6 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
-        <local:IconToImageSourceConverter x:Key="iconToImageSourceConverter"/>
     </Window.Resources>
     <Grid Style="{StaticResource mainGridStyle}">
         <Grid.RowDefinitions>
@@ -63,10 +61,13 @@
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Image Grid.Column="0" Width="64" Source="{Binding Source={x:Static draw:SystemIcons.Error},
-        Converter={StaticResource iconToImageSourceConverter},
-        Mode=OneWay}" />
-
+            <Viewbox Grid.Column="0" Stretch="Fill" Width="60" Height="60" VerticalAlignment="Top" Margin="0,10,0,0" SnapsToDevicePixels="True">
+                <Grid>
+                    <Path Fill="Red" Data="M 28.5 65.5 c -1.024 0 -2.047 -0.391 -2.829 -1.172 c -1.562 -1.562 -1.562 -4.095 0 -5.656 l 33 -33 c 1.561 -1.562 4.096 -1.562 5.656 0 c 1.563 1.563 1.563 4.095 0 5.657 l -33 33 C 30.547 65.109 29.524 65.5 28.5 65.5 z"/>
+                    <Path Fill="Red" Data="M 61.5 65.5 c -1.023 0 -2.048 -0.391 -2.828 -1.172 l -33 -33 c -1.562 -1.563 -1.562 -4.095 0 -5.657 c 1.563 -1.562 4.095 -1.562 5.657 0 l 33 33 c 1.563 1.562 1.563 4.095 0 5.656 C 63.548 65.109 62.523 65.5 61.5 65.5 z"/>
+                    <Path Fill="Red" Data="M 45 90 C 20.187 90 0 69.813 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 C 90 69.813 69.813 90 45 90 z M 45 8 C 24.598 8 8 24.598 8 45 c 0 20.402 16.598 37 37 37 c 20.402 0 37 -16.598 37 -37 C 82 24.598 65.402 8 45 8 z"/>
+                </Grid>
+            </Viewbox>
             <TextBlock Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Left" Padding="5,10" Text="Произошла непредвиденная ошибка, из-за которой программа не может продолжить работу. После того, как это окно будет закрыто, приложение завершит выполнение. К сожалению, все несохраненные данные будут утеряны."/>
         </Grid>
         <Grid Grid.Row="1">
@@ -83,6 +84,6 @@
                 <Button x:Name="quitButton" Content="Quit"  Click="QuitButton_Click" Style="{StaticResource buttonStyle}"/>
             </StackPanel>
         </Grid>
-        <TextBox Grid.Row="2" Text="{Binding Info}" Style="{StaticResource detailsTextBoxStyle}"/>
+        <TextBox Grid.Row="2" Text="{Binding Details}" Style="{StaticResource detailsTextBoxStyle}"/>
     </Grid>
 </Window>

@@ -11,14 +11,14 @@ namespace WpfExceptionHandling
 
         public static bool? ShowDialog(Exception ex)
         {
-            string info = string.Empty;
-            info += string.IsNullOrEmpty(ex.Message) ? "" : $"\nMessage ---\n{ex.Message}";
-            info += ex.HelpLink == null ? "" : $"\nHelpLink ---\n{ex.HelpLink}";
-            info += ex.Source == null ? "" : $"\nSource ---\n{ex.Source}";
-            info += ex.StackTrace == null ? "" : $"\nStackTrace ---\n{ex.StackTrace}";
-            info += ex.TargetSite == null ? "" : $"\nTargetSite ---\n{ex.TargetSite}";
+            string details = string.Empty;
+            details += string.IsNullOrEmpty(ex.Message) ? "" : $"\nMessage ---\n{ex.Message}";
+            details += ex.HelpLink == null ? "" : $"\nHelpLink ---\n{ex.HelpLink}";
+            details += ex.Source == null ? "" : $"\nSource ---\n{ex.Source}";
+            details += ex.StackTrace == null ? "" : $"\nStackTrace ---\n{ex.StackTrace}";
+            details += ex.TargetSite == null ? "" : $"\nTargetSite ---\n{ex.TargetSite}";
 
-            var vm = new UnhandledExceptionViewModel { Info = info };
+            var vm = new UnhandledExceptionViewModel { Details = details };
 
             var dialog = new UnhandledExceptionDialog
             {

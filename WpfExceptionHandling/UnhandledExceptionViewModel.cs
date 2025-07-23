@@ -5,7 +5,7 @@ namespace WpfExceptionHandling
 {
     internal class UnhandledExceptionViewModel : INotifyPropertyChanged
     {
-        string _info = string.Empty;
+        string _details = string.Empty;
         bool _isDetailsCollapsed = true;
 
         public UnhandledExceptionViewModel()
@@ -13,13 +13,13 @@ namespace WpfExceptionHandling
             DetailsButtonClickCommand = new DetailsButtonClickCmd(this);
         }
 
-        public string Info
+        public string Details
         {
-            get => _info;
+            get => _details;
             set
             {
-                _info = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Info)));
+                _details = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Details)));
             }
         }
 
